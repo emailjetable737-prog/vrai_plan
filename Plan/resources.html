@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resources</title><style>
+:root{--bg:#f7f6f2;--card:#ffffff;--text:#1d1d1b;--muted:#5d5d58;--line:#e3e1da;--accent:#2457c5;--accent-soft:#e8eefb;--ok:#1f7a4d;--ok-soft:#e5f4ec;--rest:#f1efe8;--note:#fff7e0;--note-line:#e9cf7a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#151614;--card:#1f201e;--text:#ecebe6;--muted:#a9a8a1;--line:#33342f;--accent:#86a8ff;--accent-soft:#232c42;--ok:#6fd19e;--ok-soft:#1d3329;--rest:#1b1c1a;--note:#2c2716;--note-line:#6b5a22}}
+:root[data-theme="dark"]{--bg:#151614;--card:#1f201e;--text:#ecebe6;--muted:#a9a8a1;--line:#33342f;--accent:#86a8ff;--accent-soft:#232c42;--ok:#6fd19e;--ok-soft:#1d3329;--rest:#1b1c1a;--note:#2c2716;--note-line:#6b5a22}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:24px 16px 80px}
+a{color:var(--accent)}
+nav{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav .in{max-width:780px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto}
+nav a{flex:0 0 auto;text-decoration:none;font-size:14px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--text);white-space:nowrap}
+nav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+h1{font-size:30px;line-height:1.25;margin:8px 0 6px}
+h2{font-size:22px;margin:0 0 4px}
+h3{font-size:17px;margin:0}
+.sub{color:var(--muted);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}
+.day.rest{background:var(--rest)}
+.dhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.tag{font-size:13px;color:var(--muted)}
+.note{background:var(--note);border-left:4px solid var(--note-line);padding:10px 14px;border-radius:8px;margin:8px 0 14px}
+.block{border-top:1px solid var(--line);padding:14px 0 6px}
+.bhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.time{font-size:13px;font-weight:600;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px}
+.block ul{margin:8px 0 4px;padding-left:22px}
+.block li{margin:4px 0}
+label.done{margin-left:auto;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:6px;cursor:pointer}
+label.done input{width:18px;height:18px}
+.block.is-done{opacity:.6}
+.progress{height:10px;background:var(--line);border-radius:999px;overflow:hidden;margin:8px 0 4px}
+.progress div{height:100%;background:var(--ok);width:0}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:30px}
+.pager a{text-decoration:none;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td,th{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.weeklist a{display:block;text-decoration:none;color:var(--text);padding:12px 0;border-bottom:1px solid var(--line)}
+.weeklist a:last-child{border-bottom:none}
+.weeklist b{color:var(--accent)}
+ol,ul{padding-left:22px}
+li{margin:5px 0}
+code{background:var(--accent-soft);padding:1px 5px;border-radius:5px;font-size:15px}
+.tpl{background:var(--rest);border:1px dashed var(--line);border-radius:10px;padding:12px 14px;white-space:pre-wrap}
+</style></head><body><nav><div class="in"><a href="index.html" class="">Overview</a><a href="resources.html" class="on">Resources</a><a href="week-01.html" class="">Week 1</a><a href="week-02.html" class="">Week 2</a><a href="week-03.html" class="">Week 3</a><a href="week-04.html" class="">Week 4</a><a href="week-05.html" class="">Week 5</a><a href="week-06.html" class="">Week 6</a><a href="week-07.html" class="">Week 7</a><a href="week-08.html" class="">Week 8</a><a href="week-09.html" class="">Week 9</a><a href="week-10.html" class="">Week 10</a></div></nav><main>
+<h1>Resources</h1>
+<p class="sub">Everything the daily plan refers to, in one place.</p>
+
+<div class="card"><h2>Learning links</h2>
+<table>
+<tr><td><b>Java</b></td><td><a href="https://dev.java/learn/">dev.java/learn</a> and <a href="https://www.baeldung.com/">baeldung.com</a></td></tr>
+<tr><td><b>SQL</b></td><td><a href="https://sqlbolt.com/">sqlbolt.com</a> and the <a href="https://www.postgresql.org/docs/current/tutorial.html">official PostgreSQL tutorial</a></td></tr>
+<tr><td><b>Spring Boot</b></td><td><a href="https://start.spring.io/">start.spring.io</a> and <a href="https://spring.io/guides">spring.io/guides</a></td></tr>
+<tr><td><b>Docker</b></td><td><a href="https://docs.docker.com/get-started/">docs.docker.com/get-started</a></td></tr>
+<tr><td><b>Kafka</b></td><td><a href="https://developer.confluent.io/">developer.confluent.io</a> (Kafka 101) and <a href="https://kafka.apache.org/">kafka.apache.org</a></td></tr>
+<tr><td><b>Kubernetes</b></td><td><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/">Kubernetes Basics tutorial</a> and <a href="https://kind.sigs.k8s.io/">kind</a></td></tr>
+<tr><td><b>AWS</b></td><td><a href="https://skillbuilder.aws/">AWS Skill Builder</a> (Cloud Practitioner Essentials and the official practice questions)</td></tr>
+<tr><td><b>Algorithms</b></td><td><a href="https://leetcode.com/">leetcode.com</a> and <a href="https://neetcode.io/">neetcode.io</a> for video explanations</td></tr>
+</table></div>
+
+<div class="card"><h2>Example target companies</h2>
+<p>These are examples of companies that hire Java backend developers. Always check each company's own careers page for current openings.</p>
+<p><b>Toronto:</b> RBC, TD, Scotiabank, BMO, CIBC, Manulife, Sun Life, Intact, Definity, Wealthsimple, Questrade, Interac, Dayforce, Loblaw Digital, Rogers, Canadian Tire.</p>
+<p><b>Montreal:</b> Desjardins, National Bank of Canada, Intact, Beneva, iA Financial Group, Morgan Stanley (Montreal technology centre), Air Canada, CN, Hydro-Québec, Bell, Videotron, Lightspeed, Coveo, Nuvei, Genetec, SSENSE.</p>
+<p><b>Where to search:</b> LinkedIn Jobs, Indeed, Jobillico for Quebec, and company careers pages. In Montreal, apply in French when the posting is in French.</p></div>
+
+<div class="card"><h2>LinkedIn message template</h2>
+<div class="tpl">Hi [first name], I hope you are well. I see that you work at [company] as a [role]. I am a Java developer with backend experience from Capgemini, Deloitte and Sopra Steria, and I am currently looking for a backend developer role. I noticed the [job title] position at [company], and I would really appreciate hearing what it is like to work on your team. Would you be open to a short chat, or to referring me if you think I would be a good fit? Thank you either way.</div>
+<p class="tag">For former colleagues, start with how you know each other. Keep every message short and polite, and never send the same person more than one follow-up.</p></div>
+
+<div class="card"><h2>STAR story template</h2>
+<p>Use this structure for each of your six stories. Each story should take less than two minutes to say out loud.</p>
+<ol>
+<li><b>Situation:</b> where you were and what the context was, in one or two sentences.</li>
+<li><b>Task:</b> what you were responsible for.</li>
+<li><b>Action:</b> what you did, step by step. This is the longest part. Say “I”, not “we”.</li>
+<li><b>Result:</b> what happened in the end, and what you learned.</li>
+</ol>
+<p><b>Your six stories:</b> (1) a hard technical problem you solved, (2) a disagreement with a teammate or manager, (3) a mistake and what you learned, (4) learning something new very quickly, (5) “Tell me about yourself”, and (6) why you are moving from QA into development.</p>
+<p class="tag">You do not need to talk about your leave in interviews. You are still employed at Cognizant, so there is no gap on your resume.</p></div>
+
+<div class="card"><h2>Your project at the end of the plan</h2>
+<p><b>Order Manager</b> is a Spring Boot REST API for customers, products and orders, using PostgreSQL. When an order is created, it publishes an event to Kafka, and a second service called <b>notification-service</b> consumes it safely. It is secured with Spring Security and JWT and uses a Redis cache. The whole system runs with Docker Compose, on Kubernetes, and on AWS, it is tested with JUnit, Mockito and Testcontainers, and every push runs through GitHub Actions.</p></div>
+</main></body></html>
