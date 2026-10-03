@@ -1,0 +1,115 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Java Job Plan</title><style>
+:root{--bg:#f7f6f2;--card:#ffffff;--text:#1d1d1b;--muted:#5d5d58;--line:#e3e1da;--accent:#2457c5;--accent-soft:#e8eefb;--ok:#1f7a4d;--ok-soft:#e5f4ec;--rest:#f1efe8;--note:#fff7e0;--note-line:#e9cf7a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#151614;--card:#1f201e;--text:#ecebe6;--muted:#a9a8a1;--line:#33342f;--accent:#86a8ff;--accent-soft:#232c42;--ok:#6fd19e;--ok-soft:#1d3329;--rest:#1b1c1a;--note:#2c2716;--note-line:#6b5a22}}
+:root[data-theme="dark"]{--bg:#151614;--card:#1f201e;--text:#ecebe6;--muted:#a9a8a1;--line:#33342f;--accent:#86a8ff;--accent-soft:#232c42;--ok:#6fd19e;--ok-soft:#1d3329;--rest:#1b1c1a;--note:#2c2716;--note-line:#6b5a22}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:24px 16px 80px}
+a{color:var(--accent)}
+nav{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav .in{max-width:780px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto}
+nav a{flex:0 0 auto;text-decoration:none;font-size:14px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--text);white-space:nowrap}
+nav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+h1{font-size:30px;line-height:1.25;margin:8px 0 6px}
+h2{font-size:22px;margin:0 0 4px}
+h3{font-size:17px;margin:0}
+.sub{color:var(--muted);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}
+.day.rest{background:var(--rest)}
+.dhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.tag{font-size:13px;color:var(--muted)}
+.note{background:var(--note);border-left:4px solid var(--note-line);padding:10px 14px;border-radius:8px;margin:8px 0 14px}
+.block{border-top:1px solid var(--line);padding:14px 0 6px}
+.bhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.time{font-size:13px;font-weight:600;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px}
+.block ul{margin:8px 0 4px;padding-left:22px}
+.block li{margin:4px 0}
+label.done{margin-left:auto;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:6px;cursor:pointer}
+label.done input{width:18px;height:18px}
+.block.is-done{opacity:.6}
+.progress{height:10px;background:var(--line);border-radius:999px;overflow:hidden;margin:8px 0 4px}
+.progress div{height:100%;background:var(--ok);width:0}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:30px}
+.pager a{text-decoration:none;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td,th{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.weeklist a{display:block;text-decoration:none;color:var(--text);padding:12px 0;border-bottom:1px solid var(--line)}
+.weeklist a:last-child{border-bottom:none}
+.weeklist b{color:var(--accent)}
+ol,ul{padding-left:22px}
+li{margin:5px 0}
+code{background:var(--accent-soft);padding:1px 5px;border-radius:5px;font-size:15px}
+.tpl{background:var(--rest);border:1px dashed var(--line);border-radius:10px;padding:12px 14px;white-space:pre-wrap}
+</style></head><body><nav><div class="in"><a href="index.html" class="on">Overview</a><a href="resources.html" class="">Resources</a><a href="week-01.html" class="">Week 1</a><a href="week-02.html" class="">Week 2</a><a href="week-03.html" class="">Week 3</a><a href="week-04.html" class="">Week 4</a><a href="week-05.html" class="">Week 5</a><a href="week-06.html" class="">Week 6</a><a href="week-07.html" class="">Week 7</a><a href="week-08.html" class="">Week 8</a><a href="week-09.html" class="">Week 9</a><a href="week-10.html" class="">Week 10</a></div></nav><main>
+<p class="tag">October 4 to December 15, 2026</p>
+<h1>Your Java Backend Job Plan</h1>
+<p class="sub">This plan tells you exactly what to do every day, hour by hour, from tomorrow until December 15. Open the page for the current week, do the hours in order, and tick each one when it is done.</p>
+
+<div class="card"><h2>What you are looking for</h2>
+<p>You are looking for a junior or intermediate <b>Java backend developer</b> role. The title might be Software Developer, Backend Developer, Java Developer or Software Engineer. The role should be in Montreal or Toronto, or remote within Canada, at a company that builds its own software, such as a bank, an insurer, a national company or a startup.</p>
+<p>You are not looking for QA, SDET or test automation roles, contact-centre or IVR work, or another consulting or staffing company.</p></div>
+
+<div class="card"><h2>What you will learn</h2>
+<ol>
+<li><b>Java 21</b>, your main language, refreshed with daily exercises.</li>
+<li><b>SQL and PostgreSQL</b>, from zero to designing your own database.</li>
+<li><b>Spring Boot 3</b>, used to build a real REST API called Order Manager, secured with Spring Security and JWT, with a Redis cache.</li>
+<li><b>JUnit 5 and Mockito</b>, where your QA experience becomes a strength.</li>
+<li><b>Git, GitHub, Maven and GitHub Actions</b>, the everyday developer tools.</li>
+<li><b>Docker and Docker Compose</b>, to run your project anywhere.</li>
+<li><b>Kafka</b>, to make your project event-driven with a second service.</li>
+<li><b>Kubernetes</b>, to run and troubleshoot your project on a cluster.</li>
+<li><b>AWS hands-on</b>, by deploying your project on EC2 with a budget alert to keep it safe.</li>
+<li><b>AWS Certified Cloud Practitioner</b>, with the exam planned for December 6.</li>
+<li><b>Interview skills</b>: about 95 new LeetCode problems in Python plus regular redos, Java and Spring interview questions, Java concurrency, system design basics, and six behavioural stories in English and French.</li>
+</ol>
+<p>Everything you learn goes into one project, so by the end you have one strong thing to show employers instead of many small ones.</p></div>
+
+<div class="card"><h2>Your daily schedule</h2>
+<p><b>From October 4 to November 22</b>, you study four hours every day except Saturday.</p>
+<table><tr><th>Time</th><th>What</th></tr>
+<tr><td>9:00 – 10:00 a.m.</td><td>Hour 1: Algorithms in Python (LeetCode)</td></tr>
+<tr><td>10:10 – 11:10 a.m.</td><td>Hour 2: Learn the topic of the day</td></tr>
+<tr><td>11:20 a.m. – 12:20 p.m.</td><td>Hour 3: Build or practise with exercises</td></tr>
+<tr><td>12:30 – 1:30 p.m.</td><td>Hour 4: Job search and interview practice</td></tr></table>
+<p style="margin-top:14px"><b>From November 23</b>, you are back at work, but you are on the bench, not staffed on a project. <b>Keep the full four-hour daytime schedule until Cognizant actually assigns you project work.</b> On bench days, it looks like this:</p>
+<table><tr><th>Time</th><th>What</th></tr>
+<tr><td>9:00 – 9:30 a.m.</td><td>Work check-in: resourcing manager, internal job board, assigned training</td></tr>
+<tr><td>9:30 – 10:30 a.m.</td><td>Hour 1: Algorithms in Python (LeetCode)</td></tr>
+<tr><td>10:40 – 11:40 a.m.</td><td>Hour 2: Learn the topic of the day</td></tr>
+<tr><td>11:50 a.m. – 12:50 p.m.</td><td>Hour 3: Build or practise</td></tr>
+<tr><td>5:30 – 6:30 p.m.</td><td>Hour 4: Job search, after work, on your own computer</td></tr></table>
+<p style="margin-top:14px">Anything Cognizant asks of you always comes first. <b>The evening schedule is only a fallback.</b> Use it only if you are assigned to a project and your days fill up. In that case, switch to the evening version: do Hour 1 and Hour 4 between 7:00 and 9:10 p.m., and skip Hours 2 and 3. Sundays stay four hours in the morning, and Saturday stays your rest day.</p>
+<p class="tag">If another time of day suits you better, keep the same order and simply move the hours.</p></div>
+
+<div class="card"><h2>The rules of the plan</h2>
+<ol>
+<li><b>Saturday is always a rest day.</b> Rest is what lets you keep going for ten weeks.</li>
+<li><b>The minimum day.</b> If you are sick, travelling or having a very hard day, do just one LeetCode problem and send one application. That still counts as a success, and you continue normally the next day.</li>
+<li><b>Never try to catch up by doubling a day.</b> If you miss something, skip it and continue with the current day. Sunday has a catch-up hour for unfinished work.</li>
+<li><b>The 25-minute rule for LeetCode.</b> Try alone for 25 minutes. If you are stuck, watch the NeetCode video, close it, and write the solution again from memory.</li>
+<li><b>Push to GitHub every day.</b> Your daily green squares show employers that you code consistently.</li>
+<li><b>Apply before you feel ready.</b> Hiring takes four to eight weeks, so applying from Week 2 is the only way to have a chance at December 15.</li>
+<li><b>Only add a skill to your resume once you have used it</b> in your project. Every plan day tells you when.</li>
+</ol></div>
+
+<div class="card"><h2>When you get an interview</h2>
+<p>When an interview is booked, use your learning and building hours for the days before it to prepare instead:</p>
+<ol>
+<li>Read the job posting and write down the five main skills it asks for.</li>
+<li>Research the company: what it builds, who its customers are, and any recent news.</li>
+<li>Practise “Tell me about yourself” and three of your stories out loud.</li>
+<li>Solve three LeetCode problems from the patterns you find hardest.</li>
+<li>Prepare three questions to ask the interviewer.</li>
+<li>Within one hour after the interview, write down every question you were asked, and send a short thank-you email the same day.</li>
+</ol>
+<p>If you receive an offer, bring it to me before you accept, and we will review it together.</p></div>
+
+<div class="card"><h2>The ten weeks</h2><div class="weeklist"><a href="week-01.html"><b>Week 1</b> · Oct 4 – Oct 10<br><strong>Restart Java</strong><br><span class="tag">You set up your tools, refresh core Java with daily exercises, and rewrite your resume and LinkedIn.</span></a><a href="week-02.html"><b>Week 2</b> · Oct 11 – Oct 17<br><strong>SQL, PostgreSQL, and your first applications</strong><br><span class="tag">You learn SQL from zero, design your project&#x27;s database, and start applying every weekday.</span></a><a href="week-03.html"><b>Week 3</b> · Oct 18 – Oct 24<br><strong>Spring Boot foundations</strong><br><span class="tag">You create the Order Manager API with products, customers, validation and a real database.</span></a><a href="week-04.html"><b>Week 4</b> · Oct 25 – Oct 31<br><strong>Orders, testing and Docker</strong><br><span class="tag">You add orders with transactions, write unit tests, and run everything with Docker Compose.</span></a><a href="week-05.html"><b>Week 5</b> · Nov 1 – Nov 7<br><strong>Kafka</strong><br><span class="tag">You add event-driven messaging with Kafka and build a second service that consumes events.</span></a><a href="week-06.html"><b>Week 6</b> · Nov 8 – Nov 14<br><strong>Kubernetes</strong><br><span class="tag">You run your project on a local Kubernetes cluster and learn to troubleshoot it.</span></a><a href="week-07.html"><b>Week 7</b> · Nov 15 – Nov 21<br><strong>AWS Cloud Practitioner and project polish</strong><br><span class="tag">You study for the AWS exam, add CI and polish your project. Your leave ends on Saturday.</span></a><a href="week-08.html"><b>Week 8</b> · Nov 22 – Nov 28<br><strong>Back on the bench: full plan days</strong><br><span class="tag">You return to Cognizant on the bench, keep four hours a day, and add Spring Security, JWT and Testcontainers.</span></a><a href="week-09.html"><b>Week 9</b> · Nov 29 – Dec 5<br><strong>AWS hands-on, caching and system design</strong><br><span class="tag">You take a full practice exam, add a Redis cache, deploy your project on AWS, and learn system design basics.</span></a><a href="week-10.html"><b>Week 10</b> · Dec 6 – Dec 15<br><strong>AWS exam and interview mode</strong><br><span class="tag">You take the AWS exam, learn Java concurrency, do mock interviews, and follow up on every application.</span></a></div></div>
+
+<div class="card"><h2>An honest note about December 15</h2>
+<p>This plan is built so that you give yourself the best possible chance of having a job by December 15. Nobody can promise that date, because the final decision always belongs to the employer. If December 15 arrives without an offer, that is not failure. The search simply continues until March 31, 2027, with a checkpoint on January 31, and you will be in a much stronger position than you are today.</p></div>
+
+<div class="pager"><a href="resources.html">Resources →</a><a href="week-01.html">Start Week 1 →</a></div>
+</main></body></html>
