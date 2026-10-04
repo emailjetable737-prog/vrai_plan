@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python HashMaps for DSA — A to Z</title>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;max-width:950px;margin:auto;padding:32px;color:#202124;background:#f7f8fa}article{background:white;padding:36px;border-radius:16px;box-shadow:0 2px 14px #0001}h1{font-size:2.4em}h2{margin-top:2em;border-bottom:1px solid #ddd;padding-bottom:6px}h3{margin-top:1.5em}pre{background:#111827;color:#f9fafb;padding:16px;border-radius:10px;overflow:auto}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}p code,li code,td code{background:#eef0f2;padding:2px 5px;border-radius:4px}.note{background:#eef5ff;border-left:4px solid #2563eb;padding:14px 18px;border-radius:7px}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;padding:10px;text-align:left}th{background:#f0f2f4}.diagram{white-space:pre-wrap;background:#fafafa;border:1px solid #ddd;padding:16px;border-radius:8px;font-family:monospace}@media(max-width:600px){article{padding:20px}body{padding:10px}}</style></head>
+<body><article>
+<h1>Python HashMaps: Everything You Need for DSA</h1><p>A beginner-friendly A-to-Z guide to HashMaps using Python's <code>dict</code>.</p>
+<div class="note"><strong>Core idea:</strong> In Python, the built-in dictionary (<code>dict</code>) is the HashMap you will use for most DSA problems.</div>
+<h2>1. What problem does a HashMap solve?</h2><p>A HashMap is designed to make looking up information associated with a key very fast.</p><pre>"Michael" → 1234
+"Sarah"   → 5678
+"David"   → 9012</pre><p>Instead of scanning a whole list to find Michael, a HashMap can normally locate the relevant entry in <strong>O(1) average time</strong>.</p>
+<h2>2. Keys and values</h2><pre>"Michael" → 1234
+    ↑          ↑
+   key       value</pre><p>The <strong>key</strong> identifies the thing. The <strong>value</strong> is the information associated with it.</p><p>One key plus its value is an <strong>entry</strong>.</p>
+<h2>3. Python's HashMap is <code>dict</code></h2><pre>phone_book = {
+    "Michael": "1234",
+    "Sarah": "5678",
+    "David": "9012"
+}</pre><p>When a DSA problem says “use a HashMap,” your Python brain should usually think <code>dict</code>.</p>
+<h2>4. Creating a dictionary</h2><pre>d = {}
+
+d = {
+    "apple": 5,
+    "banana": 3,
+    "orange": 8
+}
+
+# Also valid, but less common:
+d = dict()</pre>
+<h2>5. Adding an entry</h2><pre>d["banana"] = 3</pre><p>General pattern:</p><pre>dictionary[key] = value</pre>
+<h2>6. Getting a value</h2><pre>d["apple"]</pre><p>This asks: “Find the value associated with the key <code>"apple"</code>.”</p>
+<h2>7. Updating a value</h2><pre>d["apple"] = 10</pre><p>If the key already exists, Python replaces its old value. Dictionary keys are unique.</p>
+<h2>8. Checking whether a key exists</h2><pre>if "apple" in d:
+    print("Found it")
+
+"apple" in d       # True
+"grape" in d       # False</pre><p><strong>Important:</strong> <code>key in d</code> checks keys, not values.</p>
+<h2>9. Getting a value safely with <code>.get()</code></h2><pre>d["banana"]          # KeyError if "banana" doesn't exist
+d.get("banana")      # None if it doesn't exist
+d.get("banana", 0)   # 0 if it doesn't exist</pre><p>This is especially useful in DSA.</p>
+<h2>10. The most important pattern: counting</h2><pre>nums = [1, 2, 2, 3, 3, 3]
+
+count = {}
+
+for num in nums:
+    if num in count:
+        count[num] += 1
+    else:
+        count[num] = 1</pre><p>Result:</p><pre>{1: 1, 2: 2, 3: 3}</pre><h3>Cleaner Python version</h3><pre>count = {}
+
+for num in nums:
+    count[num] = count.get(num, 0) + 1</pre><p>Read <code>count.get(num, 0)</code> as: “Give me the current count; if this key doesn't exist, give me 0.”</p>
+<h2>11. <code>defaultdict</code></h2><pre>from collections import defaultdict
+
+count = defaultdict(int)
+
+for num in nums:
+    count[num] += 1</pre><p><code>defaultdict(int)</code> gives missing keys a default value of <code>0</code>. It is convenient, but learn normal dictionaries first.</p>
+<h2>12. Looping through a dictionary</h2><h3>Keys</h3><pre>for key in d:
+    print(key)</pre><h3>Values</h3><pre>for value in d.values():
+    print(value)</pre><h3>Keys and values</h3><pre>for key, value in d.items():
+    print(key, value)</pre><p>You should become very comfortable with <code>.items()</code>.</p>
+<h2>13. Deleting an entry</h2><pre>del d["apple"]
+
+value = d.pop("apple")</pre><p><code>pop()</code> removes the key and returns its value.</p>
+<h2>14. Number of entries</h2><pre>len(d)</pre>
+<h2>15. What can be a dictionary key?</h2><p>Keys must be <strong>hashable</strong>. Common examples include integers, strings, booleans, floats, and tuples whose contents are hashable.</p><pre>d = {
+    1: "one",
+    "hello": 5,
+    (1, 2): "point"
+}</pre><p>A list cannot be a key:</p><pre>d = {
+    [1, 2]: "hello"
+}</pre><p>This raises <code>TypeError: unhashable type: 'list'</code>. Mutable objects such as lists are unsuitable as keys because their contents can change.</p>
+<h2>16. Hashing</h2><p>Python hashes a key internally to help determine where its entry belongs.</p><pre>"Michael"
+    ↓
+hash
+    ↓
+internal location
+    ↓
+find entry
+    ↓
+1234</pre><p>You can see a hash value with:</p><pre>hash("Michael")</pre><p>You do not need to calculate or memorize hash values yourself. Also, Python's <code>hash()</code> is not the same thing as a cryptographic hash such as SHA-256.</p>
+<h2>17. Buckets and collisions</h2><p>Conceptually, a hash table has locations often called <strong>buckets</strong>. A hash helps determine where to look.</p><div class="diagram">KEY
+ ↓
+hash
+ ↓
+bucket/location
+ ↓
+entry
+ ↓
+VALUE</div><p>A <strong>collision</strong> occurs when different keys end up competing for the same table location.</p><pre>Michael → bucket 3
+David   → bucket 3</pre><p>The important point is that the dictionary still keeps the keys distinct and can retrieve the correct value by checking the key.</p>
+<h2>18. Important Python-specific detail: collision handling</h2><p>Generic HashMap tutorials often teach <strong>chaining</strong>, where a bucket contains a list of colliding entries. That is one common collision strategy, but <strong>Python's CPython <code>dict</code> does not simply use that classic chaining model</strong>. CPython uses a sophisticated open-addressing-based implementation.</p><p>For DSA, you do not need to implement CPython's collision strategy. What you need to understand is:</p><ul><li>Different keys can have collisions.</li><li>The dictionary handles those collisions internally.</li><li>The dictionary still checks the key so it can return the correct value.</li></ul>
+<h2>19. How Python retrieves the right value</h2><pre>d = {
+    "Michael": 1234,
+    "David": 5678
+}
+
+d["David"]</pre><p>Conceptually:</p><div class="diagram">"David"
+   ↓
+hash("David")
+   ↓
+find candidate location
+   ↓
+compare keys
+   ↓
+"David" == "David" ✓
+   ↓
+5678</div><p>The hash helps locate the relevant area; key equality identifies the exact entry.</p>
+<h2>20. Why is dictionary lookup fast?</h2><p>A normal list may require checking elements one by one. A dictionary normally uses hashing to jump close to the relevant entry instead of scanning everything.</p><pre>List search:       O(n)
+Dictionary lookup: O(1) average</pre>
+<h2>21. Is it always O(1)?</h2><p>No. Dictionary operations such as lookup, insertion, deletion, and membership are generally <strong>O(1) on average</strong>. In pathological collision situations, performance can degrade.</p><p>Python's implementation uses techniques to keep the table efficient, but you should remember the average-case distinction for DSA.</p>
+<h2>22. Resizing</h2><p>As a dictionary grows, its internal table may need more space. It can resize and redistribute entries so the table remains efficient.</p><p>This is one reason individual operations are best described as average-case O(1), even though resizing work can occasionally be more expensive.</p>
+<h2>23. Dictionary order</h2><p>Modern Python dictionaries preserve <strong>insertion order</strong>.</p><pre>d = {}
+d["a"] = 1
+d["b"] = 2
+d["c"] = 3</pre><p>Iteration will produce <code>a</code>, then <code>b</code>, then <code>c</code>. This does not mean dictionaries are automatically sorted by key.</p>
+<h2>24. HashMap vs HashSet</h2><p>Python's dictionary is used when you want:</p><pre>key → value</pre><p>Python's <code>set</code> is used when you mainly care whether an element exists and want unique elements.</p><pre>seen = set()
+
+if number in seen:
+    # duplicate
+
+seen.add(number)</pre><p>For DSA, a useful rule is:</p><ul><li><strong>“How many times did I see this?”</strong> → dictionary</li><li><strong>“Have I seen this?”</strong> → usually a set</li></ul>
+<h2>25. The Two Sum pattern</h2><pre>nums = [2, 7, 11, 15]
+target = 9
+
+seen = {}
+
+for i, num in enumerate(nums):
+    needed = target - num
+
+    if needed in seen:
+        return [seen[needed], i]
+
+    seen[num] = i</pre><p>The dictionary stores a number and the index where it was seen:</p><pre>number → index</pre><p>For <code>7</code>, the needed value is <code>9 - 7 = 2</code>. The dictionary can quickly tell us that <code>2</code> was already seen.</p>
+<h2>26. Common DSA HashMap patterns</h2><ul><li><strong>Frequency counting:</strong> <code>number → count</code></li><li><strong>Index lookup:</strong> <code>number → index</code></li><li><strong>Mapping:</strong> <code>thing → information about thing</code></li><li><strong>Grouping:</strong> <code>category → list of items</code></li><li><strong>Tracking:</strong> <code>element → state/information</code></li></ul>
+<h2>27. Important dictionary methods</h2><pre># Create
+d = {}
+
+# Add / update
+d[key] = value
+
+# Get
+value = d[key]
+
+# Safe get
+value = d.get(key)
+
+# Check existence
+if key in d:
+    ...
+
+# Delete
+del d[key]
+
+# Delete + return value
+value = d.pop(key)
+
+# Number of entries
+len(d)
+
+# Keys
+d.keys()
+
+# Values
+d.values()
+
+# Key-value pairs
+d.items()</pre>
+<h2>28. Complexity cheat sheet</h2><table><thead><tr><th>Python operation</th><th>Average time</th></tr></thead><tbody><tr><td><code>d[key]</code></td><td><strong>O(1)</strong></td></tr><tr><td><code>d[key] = value</code></td><td><strong>O(1)</strong></td></tr><tr><td><code>key in d</code></td><td><strong>O(1)</strong></td></tr><tr><td><code>del d[key]</code></td><td><strong>O(1)</strong></td></tr><tr><td><code>d.get(key)</code></td><td><strong>O(1)</strong></td></tr><tr><td><code>d.pop(key)</code></td><td><strong>O(1)</strong></td></tr><tr><td><code>len(d)</code></td><td><strong>O(1)</strong></td></tr><tr><td>Iterating through the dictionary</td><td><strong>O(n)</strong></td></tr></tbody></table><p><strong>Remember:</strong> the O(1) figures above are average-case complexities.</p>
+<h2>29. What you should know before moving on</h2><h3>Level 1 — Basic Python</h3><pre>d = {}
+
+d["Alice"] = 25
+d["Bob"] = 30
+
+print(d["Alice"])</pre><h3>Level 2 — Checking</h3><pre>if "Alice" in d:
+    ...</pre><h3>Level 3 — Counting</h3><pre>count = {}
+
+for x in nums:
+    count[x] = count.get(x, 0) + 1</pre><h3>Level 4 — Iterating</h3><pre>for key, value in d.items():
+    ...</pre><h3>Level 5 — DSA thinking</h3><p>Recognize when a problem becomes easier if you can associate a key with information and retrieve it quickly.</p>
+<h2>30. The seven things to know cold</h2><div class="note"><ol><li><strong>Python's HashMap = <code>dict</code></strong></li><li><strong>It stores <code>key → value</code></strong></li><li><strong>Keys must be hashable</strong></li><li><strong><code>d[key]</code>, <code>d[key] = value</code>, and <code>key in d</code> are O(1) average</strong></li><li><strong>Hashing allows fast lookup</strong></li><li><strong>Collisions happen, but Python handles them internally</strong></li><li><strong>Recognize the DSA patterns: counting, lookup, tracking, grouping, and “have I seen this?”</strong></li></ol></div>
+<h2>Final mental model</h2><div class="diagram">                  PYTHON DICT
+
+       KEY                         VALUE
+        │                            │
+        ▼                            ▼
+     "Alice" ────────────────────→ 25
+     "Bob"   ────────────────────→ 30
+     "John"  ────────────────────→ 42
+
+When you write:
+
+d["Bob"]
+
+Python uses hashing internally to quickly locate the
+entry for "Bob", handles collisions internally, and
+returns:
+
+30</div><div class="note"><strong>For DSA:</strong> Don't get stuck on low-level implementation details. Understand what hashing means, know how Python <code>dict</code> works, memorize the common operations and complexities, and most importantly, learn to recognize when a problem calls for a fast key → value lookup.</div>
+</article></body></html>

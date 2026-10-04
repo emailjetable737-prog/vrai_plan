@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HashMap DSA — Exercises to Become a Boss</title>
+<style>
+  :root {
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #2563eb;
+    --code-bg: #111827;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 24px 72px;
+  }
+  h1 { font-size: 2.3rem; line-height: 1.2; margin-bottom: 12px; }
+  h2 { margin-top: 42px; font-size: 1.7rem; }
+  h3 { margin-top: 28px; font-size: 1.25rem; }
+  p { margin: 12px 0; }
+  .intro {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.04);
+  }
+  .exercise {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  code {
+    background: #eef2ff;
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    color: #f9fafb;
+    padding: 18px;
+    border-radius: 10px;
+    overflow-x: auto;
+    line-height: 1.5;
+    white-space: pre-wrap;
+  }
+  pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+  }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 8px 18px;
+    margin: 18px 0;
+    background: #eff6ff;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--card);
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    text-align: left;
+  }
+  th { background: #f3f4f6; }
+  .level { margin-top: 46px; }
+  .emoji-title { margin-right: 6px; }
+  li { margin: 7px 0; }
+  .important {
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<div class="intro">
+<h1>🏆 HashMap DSA Exercises — Become a Boss</h1>
+<p>Absolutely. If your goal is to become <strong>really strong at HashMaps for DSA interviews</strong>, don't just do 5 random problems. You want to progress from <strong>“I know what a dict is” → “I automatically recognize when a HashMap is the right weapon.”</strong></p>
+<p>Here’s the progression I’d use for you.</p>
+</div>
+
+<section class="level">
+<h2>🟢 Level 1 — Master the Python <code>dict</code></h2>
+<p>Before LeetCode, make sure these are automatic.</p>
+
+<div class="exercise">
+<h3>Exercise 1 — Create a dictionary</h3>
+<p>Create a dictionary containing:</p>
+<pre><code>{
+    "Alice": 25,
+    "Bob": 31,
+    "Charlie": 22
+}</code></pre>
+<p>Then:</p>
+<ol>
+<li>Print Alice's age.</li>
+<li>Add <code>"David": 28</code>.</li>
+<li>Change Bob's age to <code>32</code>.</li>
+<li>Check whether <code>"Charlie"</code> exists.</li>
+<li>Check whether <code>"Michael"</code> exists.</li>
+<li>Delete Alice.</li>
+<li>Print the number of people.</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h3>Exercise 2 — Count numbers</h3>
+<p>Given:</p>
+<pre><code>nums = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]</code></pre>
+<p>Produce:</p>
+<pre><code>{
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4
+}</code></pre>
+<p><strong>Constraint:</strong> use a dictionary.</p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 3 — Count characters</h3>
+<p>Given:</p>
+<pre><code>s = "banana"</code></pre>
+<p>Produce:</p>
+<pre><code>{
+    "b": 1,
+    "a": 3,
+    "n": 2
+}</code></pre>
+<p>Do <strong>not</strong> use <code>collections.Counter</code> yet.</p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 4 — Find the most frequent number</h3>
+<pre><code>nums = [4, 1, 2, 4, 3, 4, 2, 1, 4]</code></pre>
+<p>Return:</p>
+<pre><code>4</code></pre>
+</div>
+
+<div class="exercise">
+<h3>Exercise 5 — First unique character</h3>
+<p>Given:</p>
+<pre><code>s = "leetcode"</code></pre>
+<p>Return:</p>
+<pre><code>"l"</code></pre>
+<p>Because <code>l</code> appears once and is the first character that appears only once.</p>
+<p>Then try:</p>
+<pre><code>s = "loveleetcode"</code></pre>
+<p>Answer:</p>
+<pre><code>"v"</code></pre>
+</div>
+</section>
+
+<section class="level">
+<h2>🟢 Level 2 — HashMap as a lookup table</h2>
+<p>Now you're going to learn the <strong>most important HashMap DSA pattern</strong>:</p>
+<blockquote><strong>Have I seen this before?</strong></blockquote>
+
+<div class="exercise">
+<h3>Exercise 6 — Contains Duplicate</h3>
+<p>Given:</p>
+<pre><code>nums = [1, 2, 3, 1]</code></pre>
+<p>Return:</p>
+<pre><code>True</code></pre>
+<p>Because <code>1</code> appears twice.</p>
+<p>Try:</p>
+<pre><code>nums = [1, 2, 3, 4]</code></pre>
+<p>Return:</p>
+<pre><code>False</code></pre>
+<p><strong>Important:</strong> solve it with a dictionary first.</p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 7 — Two Sum ⭐⭐⭐</h3>
+<p>This is one of the most important HashMap problems.</p>
+<p>Given:</p>
+<pre><code>nums = [2, 7, 11, 15]
+target = 9</code></pre>
+<p>Return:</p>
+<pre><code>[0, 1]</code></pre>
+<p>Because:</p>
+<pre><code>2 + 7 = 9</code></pre>
+<p>Your goal is to understand this pattern:</p>
+<pre><code>needed = target - num</code></pre>
+<p>Then ask:</p>
+<blockquote>"Have I already seen <code>needed</code>?"</blockquote>
+<p>If yes → you found the answer.</p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 8 — Two Sum, but explain it</h3>
+<p>Don't just solve Two Sum.</p>
+<p>After solving it, explain <strong>in your own words</strong>:</p>
+<blockquote>Why does the HashMap allow us to solve Two Sum in O(n) instead of O(n²)?</blockquote>
+<p>If you can't explain this clearly, redo the problem.</p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 9 — Intersection of Two Arrays</h3>
+<p>Given:</p>
+<pre><code>nums1 = [1, 2, 2, 1]
+nums2 = [2, 2]</code></pre>
+<p>Return:</p>
+<pre><code>[2]</code></pre>
+<p>Then consider:</p>
+<pre><code>nums1 = [4, 9, 5]
+nums2 = [9, 4, 9, 8, 4]</code></pre>
+<p>Return:</p>
+<pre><code>[9, 4]</code></pre>
+<p>Focus on using a HashMap/HashSet to quickly determine whether something exists.</p>
+</div>
+</section>
+
+<section class="level">
+<h2>🟡 Level 3 — Frequency Maps</h2>
+<p>This is where HashMaps start becoming <strong>extremely powerful.</strong></p>
+
+<div class="exercise">
+<h3>Exercise 10 — Valid Anagram ⭐⭐⭐</h3>
+<p>Given:</p>
+<pre><code>s = "anagram"
+t = "nagaram"</code></pre>
+<p>Return:</p>
+<pre><code>True</code></pre>
+<p>But:</p>
+<pre><code>s = "rat"
+t = "car"</code></pre>
+<p>Return:</p>
+<pre><code>False</code></pre>
+<p>Think:</p>
+<blockquote>"Do both strings contain exactly the same characters with exactly the same frequencies?"</blockquote>
+</div>
+
+<div class="exercise">
+<h3>Exercise 11 — Ransom Note</h3>
+<p>Given:</p>
+<pre><code>ransomNote = "a"
+magazine = "b"</code></pre>
+<p>Return:</p>
+<pre><code>False</code></pre>
+<p>But:</p>
+<pre><code>ransomNote = "aa"
+magazine = "aab"</code></pre>
+<p>Return:</p>
+<pre><code>True</code></pre>
+<p>This teaches you:</p>
+<p><strong>frequency counting + comparing counts.</strong></p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 12 — Majority Element ⭐⭐</h3>
+<p>Given:</p>
+<pre><code>nums = [2, 2, 1, 1, 1, 2, 2]</code></pre>
+<p>Return:</p>
+<pre><code>2</code></pre>
+<p>because <code>2</code> appears more than <code>n / 2</code> times.</p>
+<p>First solve it using a HashMap.</p>
+<p>Don't worry about the optimal Boyer-Moore solution yet.</p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 13 — Top K Frequent Elements ⭐⭐⭐</h3>
+<p>Given:</p>
+<pre><code>nums = [1,1,1,2,2,3]
+k = 2</code></pre>
+<p>Return:</p>
+<pre><code>[1, 2]</code></pre>
+<p>This is an important interview-level problem because it combines:</p>
+<p><strong>HashMap + frequency counting + another data structure.</strong></p>
+</div>
+</section>
+
+<section class="level">
+<h2>🟡 Level 4 — Mapping relationships</h2>
+<p>Now you're going beyond simple counting.</p>
+
+<div class="exercise">
+<h3>Exercise 14 — Isomorphic Strings ⭐⭐⭐</h3>
+<p>Given:</p>
+<pre><code>egg
+add</code></pre>
+<p>Return:</p>
+<pre><code>True</code></pre>
+<p>Because:</p>
+<pre><code>e → a
+g → d</code></pre>
+<p>But:</p>
+<pre><code>foo
+bar</code></pre>
+<p>Return:</p>
+<pre><code>False</code></pre>
+<p>This teaches you:</p>
+<blockquote><strong>mapping one thing to another</strong></blockquote>
+</div>
+
+<div class="exercise">
+<h3>Exercise 15 — Word Pattern</h3>
+<p>Given:</p>
+<pre><code>pattern = "abba"
+s = "dog cat cat dog"</code></pre>
+<p>Return:</p>
+<pre><code>True</code></pre>
+<p>But:</p>
+<pre><code>pattern = "abba"
+s = "dog cat cat fish"</code></pre>
+<p>Return:</p>
+<pre><code>False</code></pre>
+<p>This is another <strong>relationship mapping</strong> problem.</p>
+</div>
+</section>
+
+<section class="level">
+<h2>🟡 Level 5 — HashMap + grouping</h2>
+
+<div class="exercise">
+<h3>Exercise 16 — Group Anagrams ⭐⭐⭐</h3>
+<p>Given:</p>
+<pre><code>strs = ["eat", "tea", "tan", "ate", "nat", "bat"]</code></pre>
+<p>Return groups equivalent to:</p>
+<pre><code>[
+    ["eat", "tea", "ate"],
+    ["tan", "nat"],
+    ["bat"]
+]</code></pre>
+<p>The key idea is:</p>
+<blockquote>Words that are anagrams need the same HashMap key.</blockquote>
+<p>This is a <strong>must-know HashMap pattern</strong>.</p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 17 — Group words by length</h3>
+<p>Given:</p>
+<pre><code>words = ["cat", "dog", "apple", "banana", "car"]</code></pre>
+<p>Produce:</p>
+<pre><code>{
+    3: ["cat", "dog", "car"],
+    5: ["apple"],
+    6: ["banana"]
+}</code></pre>
+<p>This is a simpler version of the same grouping pattern.</p>
+</div>
+</section>
+
+<section class="level">
+<h2>🟠 Level 6 — HashMap + prefix sums</h2>
+<p>Now you're entering <strong>serious DSA territory.</strong></p>
+
+<div class="exercise">
+<h3>Exercise 18 — Subarray Sum Equals K ⭐⭐⭐⭐</h3>
+<p>Given:</p>
+<pre><code>nums = [1, 1, 1]
+k = 2</code></pre>
+<p>Return:</p>
+<pre><code>2</code></pre>
+<p>Because the subarrays are:</p>
+<pre><code>[1, 1]
+[1, 1]</code></pre>
+<p>This is one of the most important problems for learning:</p>
+<blockquote><strong>Prefix Sum + HashMap</strong></blockquote>
+<p>Don't rush this one.</p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 19 — Find the longest subarray with sum K</h3>
+<p>Example:</p>
+<pre><code>nums = [1, -1, 5, -2, 3]
+k = 3</code></pre>
+<p>Find the length of the longest contiguous subarray whose sum is <code>3</code>.</p>
+<p>This teaches you another extremely useful pattern:</p>
+<pre><code>prefix sum + HashMap</code></pre>
+</div>
+</section>
+
+<section class="level">
+<h2>🔴 Level 7 — Advanced HashMap patterns</h2>
+<p>Now we're getting into problems where you need to <strong>recognize the pattern yourself.</strong></p>
+
+<div class="exercise">
+<h3>Exercise 20 — Longest Consecutive Sequence ⭐⭐⭐⭐</h3>
+<p>Given:</p>
+<pre><code>nums = [100, 4, 200, 1, 3, 2]</code></pre>
+<p>Return:</p>
+<pre><code>4</code></pre>
+<p>Because:</p>
+<pre><code>1, 2, 3, 4</code></pre>
+<p>This is a great HashSet/HashMap problem.</p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 21 — Longest Substring Without Repeating Characters ⭐⭐⭐⭐</h3>
+<p>Given:</p>
+<pre><code>"abcabcbb"</code></pre>
+<p>Return:</p>
+<pre><code>3</code></pre>
+<p>Because:</p>
+<pre><code>"abc"</code></pre>
+<p>is the longest substring without repeated characters.</p>
+<p>This introduces:</p>
+<p><strong>HashMap + Sliding Window</strong></p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 22 — Minimum Window Substring ⭐⭐⭐⭐⭐</h3>
+<p>Given:</p>
+<pre><code>s = "ADOBECODEBANC"
+t = "ABC"</code></pre>
+<p>Return:</p>
+<pre><code>"BANC"</code></pre>
+<p>This is significantly harder.</p>
+<p>It combines:</p>
+<p><strong>HashMap + frequency counting + sliding window</strong></p>
+<p>Don't worry if this one destroys you initially. That's normal.</p>
+</div>
+</section>
+
+<section class="level">
+<h2>🔴 Level 8 — Interview Boss Mode</h2>
+<p>These are the problems I'd eventually want you to be able to solve <strong>without immediately knowing that HashMap is the intended solution.</strong></p>
+
+<div class="exercise">
+<h3>Exercise 23 — 4Sum II</h3>
+<p>Given four arrays, count how many combinations produce:</p>
+<pre><code>A[i] + B[j] + C[k] + D[l] = 0</code></pre>
+<p>This teaches:</p>
+<p><strong>HashMap + reducing a 4-part problem into two 2-part problems.</strong></p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 24 — Longest Arithmetic Subsequence</h3>
+<p>Find the length of the longest arithmetic subsequence.</p>
+<p>This introduces:</p>
+<p><strong>HashMap + dynamic programming</strong></p>
+</div>
+
+<div class="exercise">
+<h3>Exercise 25 — Copy List with Random Pointer</h3>
+<p>This is a great HashMap problem because you need to associate:</p>
+<pre><code>original node → copied node</code></pre>
+<p>This teaches a very important general pattern:</p>
+<blockquote><strong>Use a HashMap to remember the relationship between an original object and its copy.</strong></blockquote>
+</div>
+
+<div class="exercise">
+<h3>Exercise 26 — LRU Cache ⭐⭐⭐⭐⭐</h3>
+<p>This is <strong>boss-level HashMap knowledge.</strong></p>
+<p>You need:</p>
+<pre><code>HashMap + Doubly Linked List</code></pre>
+<p>The HashMap gives you:</p>
+<pre><code>key → node</code></pre>
+<p>The linked list gives you:</p>
+<pre><code>which item was used most recently</code></pre>
+<p>This is an excellent interview problem because it forces you to combine data structures.</p>
+</div>
+</section>
+
+<section class="level">
+<h2>🧠 The REAL HashMap skill</h2>
+<p>Here's something extremely important.</p>
+<p>Don't memorize:</p>
+<blockquote>"Two Sum = HashMap."</blockquote>
+<p>Instead, learn to recognize <strong>why</strong> a HashMap is useful.</p>
+
+<h3>Question 1</h3>
+<blockquote><strong>Do I need to quickly know whether I've seen something before?</strong></blockquote>
+<p>Think:</p>
+<pre><code>if x in seen:</code></pre>
+
+<h3>Question 2</h3>
+<blockquote><strong>Do I need to count how many times something appears?</strong></blockquote>
+<p>Think:</p>
+<pre><code>count[x] = count.get(x, 0) + 1</code></pre>
+
+<h3>Question 3</h3>
+<blockquote><strong>Do I need to map one thing to another?</strong></blockquote>
+<p>Think:</p>
+<pre><code>mapping[a] = b</code></pre>
+
+<h3>Question 4</h3>
+<blockquote><strong>Do I need to group things based on some property?</strong></blockquote>
+<p>Think:</p>
+<pre><code>groups[key].append(value)</code></pre>
+
+<h3>Question 5</h3>
+<blockquote><strong>Do I need to remember information about something I've already encountered?</strong></blockquote>
+<p>Think:</p>
+<pre><code>seen[x] = information</code></pre>
+
+<h3>Question 6</h3>
+<blockquote><strong>Do I have a prefix-sum problem?</strong></blockquote>
+<p>Think:</p>
+<pre><code>prefix sum + HashMap</code></pre>
+
+<h3>Question 7</h3>
+<blockquote><strong>Do I have a sliding-window problem where I need to track frequencies?</strong></blockquote>
+<p>Think:</p>
+<pre><code>sliding window + HashMap</code></pre>
+</section>
+
+<section class="level">
+<h2>🏆 Your HashMap curriculum</h2>
+<p>I would <strong>not</strong> do these randomly.</p>
+<p>Do them in this order:</p>
+
+<table>
+<thead>
+<tr><th>Stage</th><th>Problems</th></tr>
+</thead>
+<tbody>
+<tr><td>🟢 Fundamentals</td><td>1–5</td></tr>
+<tr><td>🟢 Lookup</td><td>6–9</td></tr>
+<tr><td>🟡 Frequency</td><td>10–13</td></tr>
+<tr><td>🟡 Mapping</td><td>14–15</td></tr>
+<tr><td>🟡 Grouping</td><td>16–17</td></tr>
+<tr><td>🟠 Prefix Sum</td><td>18–19</td></tr>
+<tr><td>🔴 Advanced</td><td>20–22</td></tr>
+<tr><td>🔴 Boss</td><td>23–26</td></tr>
+</tbody>
+</table>
+
+<p>And here's the rule I'd use:</p>
+
+<p><strong>Don't look at the solution immediately.</strong></p>
+
+<p>For each problem:</p>
+<ol>
+<li>Read the problem.</li>
+<li>Spend <strong>10–15 minutes</strong> thinking.</li>
+<li>Identify what information you need to remember.</li>
+<li>Ask whether a HashMap can store that information.</li>
+<li>Try writing the algorithm.</li>
+<li>Code it.</li>
+<li>Test it manually.</li>
+<li>Analyze time and space complexity.</li>
+<li>Only then look at the solution if you're stuck.</li>
+<li>After seeing the solution, <strong>close it and implement it again from memory.</strong></li>
+</ol>
+
+<p>That last step is huge.</p>
+</section>
+
+<section class="level">
+<h2>🎯 Your ultimate goal</h2>
+<p>You should eventually see something like:</p>
+
+<blockquote>"Find whether two numbers add to X"</blockquote>
+
+<p>and almost instantly think:</p>
+<pre><code>needed = target - num
+
+if needed in seen:
+    ...</code></pre>
+
+<p>Or:</p>
+
+<blockquote>"How many times does each thing occur?"</blockquote>
+
+<p>and instantly think:</p>
+<pre><code>count[x] = count.get(x, 0) + 1</code></pre>
+
+<p>Or:</p>
+
+<blockquote>"Group things that have the same property"</blockquote>
+
+<p>and think:</p>
+<pre><code>groups[key].append(item)</code></pre>
+
+<p><strong>That's when you've actually become good at HashMaps—not when you've memorized what a bucket or collision is.</strong></p>
+
+<p>If you can confidently solve <strong>Two Sum → Group Anagrams → Top K Frequent → Longest Substring → Subarray Sum Equals K → LRU Cache</strong>, you'll have a very strong HashMap foundation for interview DSA.</p>
+
+</section>
+
+</main>
+</body>
+</html>
