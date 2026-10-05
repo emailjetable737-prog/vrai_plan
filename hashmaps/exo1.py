@@ -1,3 +1,23 @@
+# Exercise 1 — Create a dictionary
+
+# Create a dictionary containing:
+
+# {
+#     "Alice": 25,
+#     "Bob": 31,
+#     "Charlie": 22
+# }
+
+# Then:
+
+# 1.Print Alice's age.
+# 2. Add "David": 28.
+# 3. Change Bob's age to 32.
+# 4. Check whether "Charlie" exists.
+# 5. Check whether "Michael" exists.
+# 6. Delete Alice.
+# 7. Print the number of people.
+
 hmap = {
     "Alice": 25,
     "Bob": 31,
