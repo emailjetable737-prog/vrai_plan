@@ -1,11 +1,11 @@
 # Exercise 4 — Find the most frequent number
 
-# nums = [4, 1, 2, 4, 3, 4, 2, 1, 4]
+# nums = [4, 1, 2, 4, 3, 4, 2, 1, 4, 4]
 # Return:
 
-# 4
+# 5
 
-nums = [4, 1, 2, 4, 3, 4, 2, 1, 4]
+nums = [4, 1, 2, 4, 3, 4, 2, 1, 4, 4]
 
 hmap = {}
 
@@ -25,4 +25,5 @@ while(curr_pair != "end"):
         best_pair = curr_pair
     curr_pair = next(it, "end")
 
-print(best_pair[1])
+print(hmap)
+print(f"{best_pair} -> {best_pair[1]}")
